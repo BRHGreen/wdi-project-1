@@ -5,15 +5,16 @@
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Fruktur" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
   <script src="js/app.js"></script>
 </head>
 <body>
 <header><h1>Escher Jumble Puzzle</h1></header>
 
-<main>
+<main >
 <!-- <img src="images/escherLizardsAgain.jpg"> -->
- <ul>
+ <ul id="drag">
    <li><span>1</span><img  src="images/escherLizardsAgain.jpg"></li>
    <li><span>2</span><img  src="images/escherLizardsAgain.jpg"></li>
    <li><span>3</span><img  src="images/escherLizardsAgain.jpg"></li>
@@ -30,12 +31,14 @@
    <li><span>14</span><img src="images/escherLizardsAgain.jpg"></li>
    <li><span>15</span><img src="images/escherLizardsAgain.jpg"></li>
    <li id="blank"><span>16</span></li>
- 
  </ul>
 </main>
 <div id="buttons">
   <button id="prev">Previous</button>
   <button id="next">Next</button>
 </div>
+
+
+
 </body>
 </html>

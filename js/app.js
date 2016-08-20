@@ -11,79 +11,77 @@
 
 $(start)
 
-var start = [1,2,3,4,5,6,7,8];
-var shuffle = []
-var plays = [];
-var elements = [
-{id: 0},
-{id: 1},
-{id: 2},
-{id: 3},
-{id: 4},
-{id: 5},
-{id: 6},
-{id: 7},
-{id: 8}
+var start    = [0,1,2,3,4,5,6,7,""];
+var width    = 3;
+var shuffled;
+var plays    = [];
 
-
-  // var item = "<li id='element.id'>"+ element.id + "</li>"
-  // $('ul').append(item);
-
-  ]
-  
-
-  function start () {
-
-    createTiles()
-
-
-
-    function createTiles() {
-      $(elements).each(function(index){
-
-        $("<li id="+index+">"+index+"</li>").appendTo("ul");
-      })
-    }
-
-    function remove() {
-
-    }
-
-
-    $("#shuffle").click(shuffle)
-
-    function shuffle () {
-      $("li").remove()
-      $(elements).each(function(index){
-        index = Math.floor(Math.random()*8);
-        $("<li id="+index+">"+index+"</li>").appendTo("ul");
-      })
-    }
-
-    // function shuffle () {
-    //   $("elements").each(function {
-        
-    //   })
-    // }
-
-
-
-  // shuffle elements array
-
-  // loop over elements array once shuffled, for each element inside the array append a li to the ul container
-
-  // once inside, loop over lis and create a new array of the ids
-  // [4,5,1,2,8,7,6]
-  // current playing array
-
-  // click event on lis
-  // compare the two arrays, if they are exactly the same, WIN, if not, keep playing the game
-
-
-
-
+function start() {
+  createTiles(start);
+  $("#shuffle").on("click", shuffle);
+  $("ul").on("click", "li", move);
 }
 
+function createTiles(array) {
+  var $ul = $("ul");
+  $("li").remove();
+  $.each(array, function(index, value){
+    $("<li id="+value+">"+value+"</li>").appendTo($ul);
+  })
+}
+
+$("li").click(function() {
+  $("li").animate({left:'100px'})
+})
+
+function shuffle() {
+  var randomTileIndex, lastTile, numberOfTiles;
+  shuffled = start.slice(0);
+
+  for (numberOfTiles = shuffled.length; numberOfTiles; numberOfTiles--) {
+    randomTileIndex             = Math.floor(Math.random() * numberOfTiles);
+    lastTile                    = shuffled[numberOfTiles - 1];
+    shuffled[numberOfTiles - 1] = shuffled[randomTileIndex];
+    shuffled[randomTileIndex]   = lastTile;
+  }
+
+  createTiles(shuffled);
+}
+
+function move(){
+  if (!shuffled) return;
+  var $square  = $(this);
+  var $lis     = $("li");
+  var lisArray = [].slice.call($lis);
+  var index    = lisArray.indexOf(this);
+
+  $square.css("background", "red");
+
+  console.log(shuffled)
+
+  if (shuffled[index-width] === "") return console.log("TOP");
+  if (shuffled[index+1] === "")     return console.log("RIGHT");
+  if (shuffled[index-1] === "")     return console.log("LEFT");
+  if (shuffled[index+width] === "") return console.log("BOTTOM");
+}
+
+
+
+
+
+
+
+
+// shuffle elements array
+
+// loop over elements array once shuffled, for each element inside the array append a li to the ul container
+
+// once inside, loop over lis and create a new array of the ids
+// [4,5,1,2,8,7,6]
+// current playing array
+
+// click event on lis
+// compare the two arrays, if they are exactly the same, WIN, if not, keep playing the game
 
 
 // function setup () {

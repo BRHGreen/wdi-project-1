@@ -5,14 +5,13 @@ header {
 }
 
 main {
-  height: 420px;
-  width: 408px;
+  height: 320px;
+  width: 320px;
   text-align: center;
   margin: 0px auto;
   border: 1px solid black ;
   overflow: auto;
 }
-
 h1 {
   font-family: 'Fruktur', cursive;
   font-size: 3em;
@@ -20,10 +19,12 @@ h1 {
   margin: 100px auto;
 }
 
+
 ul {
   padding-top: 10px;
 }
 
+/*
 img {
   margin: 0px auto;
   text-align: center;
@@ -38,15 +39,16 @@ img {
   height: 100px;
   float: left;
 }
-
+*/
 li {
+  border: 1px solid black;
   position: relative;
   width: 100px;
   height: 100px;
   float: left;
   overflow: hidden; 
 }
-
+/*
 .sp1 {
   position: absolute;
   top: 0;
@@ -183,7 +185,7 @@ li:nth-child(16) {
 }
 
 
-
+*/
 #buttons {
   padding: 20px;
   margin: 0 auto;
@@ -195,7 +197,7 @@ button {
   height: 50px;
   width: 100px;
 }
-
+/*
 
 .sort {
   border: 1px solid red;
@@ -207,3 +209,4 @@ button {
 }
 
 
+*/

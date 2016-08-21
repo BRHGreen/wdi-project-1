@@ -1,7 +1,8 @@
 $(start)
-var start    = [0,1,2,3,4,5,6,7,"x"];
+var start            = [0,1,2,3,4,5,6,7,"x"];
 var shuffled;
-var width    = 3;
+var width           = 3;
+var currentBoard    = [];
 
 
 function start () {
@@ -15,6 +16,7 @@ function createTiles (array) {
   $("li").remove();
   $.each(array, function(index, value) {
     $("<li id="+value+">"+value+"</li>").appendTo($ul);
+
   })
 }
 
@@ -28,7 +30,13 @@ function shuffle() {
     shuffled[numberOfTiles -1]  = shuffled[randomTileIndex]
     shuffled[randomTileIndex]   = lastTile;
   }
+
   createTiles(shuffled);
+
+  $(shuffled).each(function(index, value){
+    currentBoard.push(value)
+  })
+
 } 
 
 function move () {
@@ -38,28 +46,27 @@ function move () {
   var lisArray = [].slice.call($lis);
   var index    = lisArray.indexOf(this);
 
-  console.log(this)
-
-
   $square.css("background", "red");
 
   if (shuffled[index-width] === "x") {
     $(this).animate({
       top: '-102px'
-  })
+    })
     $("#x").animate({
       bottom: '-102px'
-  })    
+    })
+    console.log("this: " + this.id)    
+    updateBoard(this)
     return console.log("up");
   }
 
   else if (shuffled[index-1]     === "x") { 
     $(this).animate({
       left: '-102px'
-  })
+    })
     $("#x").animate({
-        right: '-102px'
-  }) 
+      right: '-102px'
+    }) 
     return console.log("left");
   }
 
@@ -67,31 +74,33 @@ function move () {
     $(this).animate({
       left: '102px'
     })
-      $("#x").animate({
-        left: '-102px'
+    $("#x").animate({
+      left: '-102px'
     }) 
-  return console.log("right");
+    return console.log("right");
   }
 
   else if (shuffled[index+width] === "x") {
-      $(this).animate({
-        bottom: '-102px'
+    $(this).animate({
+      bottom: '-102px'
     })
-      $("#x").animate({
-        top: '-102px'
+    $("#x").animate({
+      top: '-102px'
     }) 
-  return console.log("down");
+    return console.log("down");
   }
 
   else {
     console.log('no')
-  }
+  }  
+}
 
+function updateBoard (a) {
+  $(currentBoard).each(function(index, value) {
+    console.log(index, value)
+    console.log(a[index])
+  })
 
-
-  
-
-  
 }
 
 

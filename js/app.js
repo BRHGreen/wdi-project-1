@@ -107,11 +107,12 @@ function arrayIndex (a) {
       var ix = index
       if (a) {
         index = ix
-        console.log(ix + 3)
       console.log(" ai:" + index + " av:" + a)
       }
       if (value === "x") {
-        index === (ix + 3);
+        ix = ix+3
+        index = (ix);
+        console.log(ix)
         console.log(" xi:" + index + " xv:" + value )
 
       }

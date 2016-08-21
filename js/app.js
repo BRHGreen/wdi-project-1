@@ -2,7 +2,10 @@ $(start)
 var start            = [0,1,2,3,4,5,6,7,"x"];
 var shuffled;
 var width           = 3;
-var currentBoard    = [];
+
+var currentBoard    = []
+
+
 
 
 function start () {
@@ -35,6 +38,7 @@ function shuffle() {
 
   $(shuffled).each(function(index, value){
     currentBoard.push(value)
+    // console.log(currentBoard)
   })
 
 } 
@@ -55,8 +59,9 @@ function move () {
     $("#x").animate({
       bottom: '-102px'
     })
-    console.log("this: " + this.id)    
-    updateBoard(this)
+
+    arrayIndex(this.id)
+
     return console.log("up");
   }
 
@@ -95,18 +100,15 @@ function move () {
   }  
 }
 
-function updateBoard (a) {
-  $(currentBoard).each(function(index, value) {
-    console.log(index, value)
-    console.log(a[index])
-  })
 
+function arrayIndex (a) {
+  $(currentBoard).each(function(index, value){
+    if (value === "x") {
+      var ix = index
+      console.log(" x:"+ix)
+    }    
+})  
 }
-
-
-
-
-
 
 
 

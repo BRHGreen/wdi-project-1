@@ -47,11 +47,21 @@ function move () {
 
   $square.css("background", "red");
 
-  // if (shuffled[index-width] === "") return console.log("up");
-  // if (shuffled[index-1]     === "") return console.log("left");
-  // if (shuffled[index+1]     === "") return console.log("right");
-  // if (shuffled[index+width] === "") return console.log("down");
-  // else { console.log("no")}
+  if (shuffled[index-width] === "") 
+    $(this).animate({
+      top: '-100px'
+  })
+    return console.log("up");
+
+  if (shuffled[index-1]     === "")  
+    $(this).animate({
+      left: '-100px'
+  })
+    return console.log("left");
+
+  if (shuffled[index+1]     === "") return console.log("right");
+  if (shuffled[index+width] === "") return console.log("down");
+  else { console.log("no")}
 
   
 

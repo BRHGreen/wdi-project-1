@@ -105,8 +105,20 @@ function arrayIndex (a) {
   $(currentBoard).each(function(index, value){
     if (value === "x") {
       var ix = index
-      console.log(" x:"+ix)
-    }    
+      if (a) {
+        index = ix
+        console.log(ix + 3)
+      console.log(" ai:" + index + " av:" + a)
+      }
+      if (value === "x") {
+        index === (ix + 3);
+        console.log(" xi:" + index + " xv:" + value )
+
+      }
+  
+      }
+      
+       
 })  
 }
 

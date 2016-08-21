@@ -1,5 +1,5 @@
 $(start)
-var start    = [0,1,2,3,4,5,6,7,""];
+var start    = [0,1,2,3,4,5,6,7,"x"];
 var shuffled;
 var width    = 3;
 
@@ -43,31 +43,43 @@ function move () {
 
   $square.css("background", "red");
 
-  if (shuffled[index-width] === "") {
+  if (shuffled[index-width] === "x") {
     $(this).animate({
-      top: '-100px'
+      top: '-102px'
   })
+    $("#x").animate({
+      bottom: '-102px'
+  })    
     return console.log("up");
   }
 
-  else if (shuffled[index-1]     === "") { 
+  else if (shuffled[index-1]     === "x") { 
     $(this).animate({
-      left: '-100px'
+      left: '-102px'
   })
+    $("#x").animate({
+        right: '-102px'
+  }) 
     return console.log("left");
   }
 
-  else if  (shuffled[index+1]     === "") {
+  else if  (shuffled[index+1]     === "x") {
     $(this).animate({
-      left: '100px'
+      left: '102px'
     })
+      $("#x").animate({
+        left: '-102px'
+    }) 
   return console.log("right");
   }
 
-  else if (shuffled[index+width] === "") {
+  else if (shuffled[index+width] === "x") {
       $(this).animate({
-        bottom: '-100px'
+        bottom: '-102px'
     })
+      $("#x").animate({
+        top: '-102px'
+    }) 
   return console.log("down");
   }
 

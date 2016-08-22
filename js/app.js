@@ -4,7 +4,7 @@ var shuffled;
 var width           = 3;
 
 var currentBoard    = []
-
+var newBoard        = []
 
 
 
@@ -103,24 +103,27 @@ function move () {
 
 function arrayIndex (a) {
   $(currentBoard).each(function(index, value){
+    console.log(currentBoard)
     if (value === "x") {
       var ix = index
       if (a) {
         index = ix
-      console.log(" ai:" + index + " av:" + a)
+        console.log(" ai:" + index + " av:" + a)
+        console.log(currentBoard.join())
+        currentBoard.splice(2,0,"x")
+        console.log(currentBoard.join())
       }
-      if (value === "x") {
+      if (a) {
         ix = ix+3
         index = (ix);
-        console.log(ix)
         console.log(" xi:" + index + " xv:" + value )
-
-      }
-  
+        currentBoard.push(parseInt(a))
+        console.log(currentBoard)
       }
       
-       
-})  
+    }
+    
+  })  
 }
 
 

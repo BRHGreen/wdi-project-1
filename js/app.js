@@ -107,29 +107,21 @@ function arrayIndex (a) {
     if (value === "x") {
       var splice = (index)
       console.log(currentBoard.join())
-      currentBoard.splice(index, index+1)
+      console.log(splice)
+      currentBoard.splice(splice, 0, parseInt(a))
       console.log(currentBoard.join())
       console.log(currentBoard)
-      // var ix = index
-      // if (a) {
-      //   index = ix
-      //   console.log(" ai:" + index + " av:" + a)
-      //   console.log(currentBoard.join())
-      //   currentBoard.splice(2,0,"x")
-      //   console.log(currentBoard.join())
-      // }
-      // if (a) {
-      //   ix = ix+3
-      //   index = (ix);
-      //   console.log(" xi:" + index + " xv:" + value )
-      //   currentBoard.push(parseInt(a))
-      //   console.log(currentBoard)
-      }
-      
+    //   $(currentBoard).each(function(index, value){
+    //     if (value === a)
+    // }
+
+    }
+
   })  
-    
-    
 }
+
+
+
 
 
 

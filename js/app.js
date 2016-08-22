@@ -36,6 +36,9 @@ function shuffle() {
 
 function move() {
   if (!shuffled) return alert("You need to shuffle"); 
+    console.log(shuffled)
+
+  
   var $square       = $(this);
   var $x            = $("#x");
   var $lis          = $("li");
@@ -45,11 +48,10 @@ function move() {
   var currentSquare = shuffled[index];
   var newIndex, newSquare;
 
-  console.log("Index of lis", index);
-  console.log($lis[index]);
-  console.log("Number in shuffled array", shuffled[index]);
-  if ($lis[index] === "x") return alert("Don't click on x");
 
+  if ($lis[index] === "x") return alert("Don't click on x");
+  console.log(shuffled.indexOf(id))
+  console.log(shuffled.indexOf('x'))
   $square.css("background", "red");
 
   var prevLeft  = parseInt($square.css("left"));
@@ -73,6 +75,7 @@ function move() {
       top: prevXTop - 102 + "px"
     }) 
     newIndex = index+width;
+    //left
   } else if (shuffled[index-1] === "x") { 
     $square.animate({
       left: prevLeft - 102 + "px"
@@ -81,6 +84,7 @@ function move() {
       left: prevXLeft + 102 + "px"
     }) 
     newIndex = index-1;
+    //right
   } else if (shuffled[index+1] === "x") {
     $square.animate({
       left: prevLeft + 102 + "px"
@@ -94,6 +98,7 @@ function move() {
   newSquare          = shuffled[newIndex];
   shuffled[newIndex] = currentSquare;
   shuffled[index]    = newSquare;
+  console.log(shuffled)
 }
 
 function displayBoard(array){
@@ -104,6 +109,22 @@ function displayBoard(array){
   }
   return board;
 }
+
+
+
+/*
+   X+1    Y+1       N+1   
+    1     2,4                     3/3,5,6,7,8,9     -can't play if the square is greater than x index +3
+    2     1,3,5                   4/6,7,8,9         -can't play if the square === x index + 2
+    3     2,6       1,4,6         5/7,8,9
+    4     1,5,7     2,3,          6/8,9     
+    5     2,4,6,8   1,3,          7/9
+    6     3,5,9     1,2,4,7,      8/
+    7     4,8       1,2,3,5,6,    9/
+    8     5,7,9     1,2,3,4,6
+    9     6,8       1,2,3,4,7
+*/
+
 
 
 

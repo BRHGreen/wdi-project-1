@@ -59,10 +59,10 @@ function move () {
     $("#x").animate({
       bottom: '-102px'
     })
-
-    arrayIndex(this.id)
-
+    $(currentBoard).each(function(value, index){
+      if (value
     return console.log("up");
+  })
   }
 
   else if (shuffled[index-1]     === "x") { 
@@ -100,25 +100,6 @@ function move () {
   }  
 }
 
-
-function arrayIndex (a) {
-  $(currentBoard).each(function(index, value){
-    console.log(currentBoard)
-    if (value === "x") {
-      var splice = (index)
-      console.log(currentBoard.join())
-      console.log(splice)
-      currentBoard.splice(splice, 0, parseInt(a))
-      console.log(currentBoard.join())
-      console.log(currentBoard)
-    //   $(currentBoard).each(function(index, value){
-    //     if (value === a)
-    // }
-
-    }
-
-  })  
-}
 
 
 

@@ -2,8 +2,9 @@ $(start)
 var start           = [0,1,2,3,4,5,6,7,"x"];
 var shuffled;
 var width           = 3;
-var currentBoard    = []
-var newBoard        = []
+
+
+
 
 function start () {
   createTiles(start);
@@ -16,7 +17,7 @@ function createTiles (array) {
   var $ul = $("ul");
   $("li").remove();
   $.each(array, function(index, value) {
-    $("<li id='id"+value+"'><img src='./images/text.jpg'></li>").appendTo($ul);
+    $("<li id='id"+value+"'><img src='./images/oReallyMeme.jpg'></li>").appendTo($ul);
   });
 }
 
@@ -32,11 +33,13 @@ function shuffle() {
   }
 
   createTiles(shuffled);
+
+  $("#idx img").css("background-color", "white")
+  $("#idx img").css("z-index", "-1")
 } 
 
 function move() {
   if (!shuffled) return alert("You need to shuffle"); 
-
   
   var $square       = $(this);
   var $x            = $("#idx");
@@ -47,7 +50,7 @@ function move() {
   var currentSquare = shuffled[index];
   var newIndex, newSquare;
 
-  if ($lis[index] === "x") return;
+  if ($lis[index] === "xid") return;
   
   var w = width;
   var possibleIndexes = [index-w, index+1, index+w, index-1];
@@ -71,7 +74,6 @@ function move() {
   var prevXLeft = parseInt($("#idx").css("left"));
   var prevXTop  = parseInt($("#idx").css("top"));
 
-  console.log(prevLeft, prevTop, prevXLeft, prevXTop)
 
   if (shuffled[index-width] === "x")  {
     $square.animate({
@@ -110,13 +112,17 @@ function move() {
   newSquare          = shuffled[newIndex];
   shuffled[newIndex] = currentSquare;
   shuffled[index]    = newSquare;
+
+  $(shuffled).each(winning)
+  function winning () {
+      console.log(shuffled)
+      console.log(start)
+    if (shuffled === start) {
+      alert("good job")
+    }
+  }
+
 }
 
-function displayBoard(array){
-  var board = "\n";
-  var i,j,temparray,chunk = 3;
-  for (i=0,j=array.length; i<j; i+=chunk) {
-    board += array.slice(i,i+chunk).toString()+"\n";
-  }
-  return board;
-}
+
+

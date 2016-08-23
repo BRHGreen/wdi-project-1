@@ -35,52 +35,51 @@ li {
 }
 
 li img {
-  position: relative;
+  position: absolute;
 }
 
-li:nth-child(1) img{
+#id0 img{
   top: 0px;
   left: 0px;
 }
 
-li:nth-child(2) img {
+#id1 img {
   top: 0px;
   left: -100px;
 }
 
-li:nth-child(3) img{
+#id2 img{
   top: 0px;
   left: -200px;
 }
 
-li:nth-child(4) img{
+#id3 img{
   top: -100px;
   left: 0px;
 }
 
-li:nth-child(5) img{
+#id4 img{
   top: -100px;
   left: -100px;
 }
 
-li:nth-child(6) img{
+#id5 img{
   top: -100px;
   left: -200px;
 }
 
-li:nth-child(7) img{
+#id6 img{
   top: -200px;
   left: 0px;
 }
 
-li:nth-child(8) img{
+#id7 img{
   top: -200px;
   left: -100px;
 }
 
-#x {
-  background: red;
-
+#idx  img{
+  left: 100px;
 }
 
 

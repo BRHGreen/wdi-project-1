@@ -9,7 +9,7 @@ var width           = 3;
 function start () {
   createTiles(start);
 
-  $("#shuffle").on("click", shuffle);
+  $("span").on("click", shuffle);
   $("ul").on("click", "li", move); 
 }
 
@@ -114,9 +114,10 @@ function move() {
   shuffled[index]    = newSquare;
 
   $(shuffled).each(winning)
-  function winning () {
+  function winning (index, value) {
       console.log(shuffled)
       console.log(start)
+
     if (shuffled === start) {
       alert("good job")
     }

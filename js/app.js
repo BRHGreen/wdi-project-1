@@ -38,16 +38,16 @@ function shuffle() {
 
 function move() {
   if (!shuffled) return alert("You need to shuffle"); 
-  var playedTile = (this.id)
-  $(shuffled).each(function (index, value){
-    if(value === parseInt(playedTile)) {
-      var playedTileIndex = index
-      if ((playedTileIndex === 2 || playedTileIndex === 5) && (playedTileIndex+1 === 3 || playedTileIndex+1 === 6)) {
-        alert("no");
-      }
+  // var playedTile = (this.id)
+  // $(shuffled).each(function (index, value){
+  //   if(value === parseInt(playedTile)) {
+  //     var playedTileIndex = index
+  //     if ((playedTileIndex === 2 || playedTileIndex === 5) && (playedTileIndex+1 === 3 || playedTileIndex+1 === 6)) {
+  //       alert("no");
+  //     }
 
-    }
-  })
+  //   }
+  // })
   
   var $square       = $(this);
   var $x            = $("#x");
@@ -60,8 +60,10 @@ function move() {
 
 
   if ($lis[index] === "x") return alert("Don't click on x");
+  if ((shuffled[index+1] === "x") && (index === 2 || index === 5)) return alert ("Not ok") 
+  if ((shuffled[index-1] === "x") && (index === 3 || index === 6)) return alert ("Not Aok") 
 
-  $square.css("background", "red");
+
 
   var prevLeft  = parseInt($square.css("left"));
   var prevTop   = parseInt($square.css("top"));
@@ -94,7 +96,7 @@ function move() {
     }) 
     newIndex = index-1;
     //right
-  } else if (shuffled[index+1] === "x") {  
+  } else if (shuffled[index+1] === "x") {
     $square.animate({
       left: prevLeft + 102 + "px"
     })
@@ -103,7 +105,6 @@ function move() {
     }) 
     newIndex = index+1;
   } 
-
   newSquare          = shuffled[newIndex];
   shuffled[newIndex] = currentSquare;
   shuffled[index]    = newSquare;

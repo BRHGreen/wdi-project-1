@@ -5,10 +5,7 @@ var width           = 3;
 var currentBoard    = []
 var newBoard        = []
 
-
-
 function start () {
-
   createTiles(start);
 
   $("#shuffle").on("click", shuffle);
@@ -19,7 +16,7 @@ function createTiles (array) {
   var $ul = $("ul");
   $("li").remove();
   $.each(array, function(index, value) {
-    $("<li id=id"+value+"><img src='./images/text.jpg'></li>").appendTo($ul);
+    $("<li id='id"+value+"'><img src='./images/text.jpg'></li>").appendTo($ul);
   });
 }
 
@@ -32,40 +29,49 @@ function shuffle() {
     lastTile                    = shuffled[numberOfTiles - 1];
     shuffled[numberOfTiles -1]  = shuffled[randomTileIndex]
     shuffled[randomTileIndex]   = lastTile;
-
   }
 
   createTiles(shuffled);
 } 
 
 function move() {
-  $(shuffled).each(function(index, value){
-    console.log(index, value)
-
-  })
-
   if (!shuffled) return alert("You need to shuffle"); 
 
   
   var $square       = $(this);
-  var $x            = $("#x");
+  var $x            = $("#idx");
   var $lis          = $("li");
   var lisArray      = [].slice.call($lis);
-  var id            = parseInt($square.attr("id"));
+  var id            = parseInt($square.attr("id").replace("id", ""))
   var index         = shuffled.indexOf(id);
   var currentSquare = shuffled[index];
   var newIndex, newSquare;
-  console.log(index)
 
+  if ($lis[index] === "x") return;
+  
+  var w = width;
+  var possibleIndexes = [index-w, index+1, index+w, index-1];
 
-  if ($lis[index] === "x") return alert("Don't click on x");
-  if ((shuffled[index+1] === "x") && (index === 2 || index === 5)) return alert ("Not ok") 
-  if ((shuffled[index-1] === "x") && (index === 3 || index === 6)) return alert ("Not Aok") 
+  possibleIndexes = possibleIndexes.filter(function(square){
+    var modIndex  = index  % w;
+    var modSquare = square % w;
+    var modDiff1  = modIndex - modSquare;
+    var modDiff2  = modSquare - modIndex;
+    return (modDiff1 < 2) && (modDiff2 < 2) && (square >= 0) && (square <= 8);
+  });
+
+  var possible = possibleIndexes.filter(function(square){
+    return shuffled[square] === "x";
+  });
+
+  if (possible.length <= 0) return;
 
   var prevLeft  = parseInt($square.css("left"));
   var prevTop   = parseInt($square.css("top"));
-  var prevXLeft = parseInt($("#x").css("left"));
-  var prevXTop  = parseInt($("#x").css("top"));
+  var prevXLeft = parseInt($("#idx").css("left"));
+  var prevXTop  = parseInt($("#idx").css("top"));
+
+  console.log(prevLeft, prevTop, prevXLeft, prevXTop)
 
   if (shuffled[index-width] === "x")  {
     $square.animate({
@@ -83,7 +89,6 @@ function move() {
       top: prevXTop - 100 + "px"
     }) 
     newIndex = index+width;
-    //left
   } else if (shuffled[index-1] === "x") { 
     $square.animate({
       left: prevLeft - 100 + "px"
@@ -92,7 +97,6 @@ function move() {
       left: prevXLeft + 100 + "px"
     }) 
     newIndex = index-1;
-    //right
   } else if (shuffled[index+1] === "x") {
     $square.animate({
       left: prevLeft + 100 + "px"
@@ -101,7 +105,8 @@ function move() {
       left: prevXLeft - 100 + "px"
     }) 
     newIndex = index+1;
-  } 
+  }
+
   newSquare          = shuffled[newIndex];
   shuffled[newIndex] = currentSquare;
   shuffled[index]    = newSquare;

@@ -8,6 +8,9 @@ var newBoard        = []
 
 
 function start () {
+
+  // $('li').prepend('<img id="theImg" src="/Users/Mac/generalAssembly/Development/wdi-project-1/images/escherLizardsAgain.jpg" />')
+
   createTiles(start);
 
   $("#shuffle").on("click", shuffle);
@@ -18,7 +21,9 @@ function createTiles (array) {
   var $ul = $("ul");
   $("li").remove();
   $.each(array, function(index, value) {
-    $("<li id="+value+">"+value+"</li>").appendTo($ul);
+    if (value !== "x") {
+    $("<li id="+value+"><img src='./images/escherLizardsAgain.jpg'></li>").appendTo($ul);
+  }
   });
 }
 
@@ -48,6 +53,7 @@ function move() {
 
   //   }
   // })
+
   
   var $square       = $(this);
   var $x            = $("#x");
@@ -72,36 +78,36 @@ function move() {
 
   if (shuffled[index-width] === "x")  {
     $square.animate({
-      top: prevTop - 102 + "px"
+      top: prevTop - 100 + "px"
     })
     $x.animate({
-      top: prevXTop + 102 + "px"
+      top: prevXTop + 100 + "px"
     })
     newIndex = index-width;
   } else if (shuffled[index+width] === "x") {
     $square.animate({
-      top: prevTop + 102 + "px"
+      top: prevTop + 100 + "px"
     })
     $x.animate({
-      top: prevXTop - 102 + "px"
+      top: prevXTop - 100 + "px"
     }) 
     newIndex = index+width;
     //left
   } else if (shuffled[index-1] === "x") { 
     $square.animate({
-      left: prevLeft - 102 + "px"
+      left: prevLeft - 100 + "px"
     })
     $x.animate({
-      left: prevXLeft + 102 + "px"
+      left: prevXLeft + 100 + "px"
     }) 
     newIndex = index-1;
     //right
   } else if (shuffled[index+1] === "x") {
     $square.animate({
-      left: prevLeft + 102 + "px"
+      left: prevLeft + 100 + "px"
     })
     $x.animate({
-      left: prevXLeft - 102 + "px"
+      left: prevXLeft - 100 + "px"
     }) 
     newIndex = index+1;
   } 

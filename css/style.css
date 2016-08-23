@@ -5,8 +5,8 @@ header {
 }
 
 main {
-  height: 320px;
-  width: 320px;
+  height: 300px;
+  width: 300px;
   text-align: center;
   margin: 0px auto;
   border: 1px solid black ;
@@ -21,86 +21,65 @@ h1 {
 
 
 ul {
-  padding-top: 10px;
+  margin: 0;
+  padding: 0;
 }
 
-/*
-img {
-  margin: 0px auto;
-  text-align: center;
-  height: 400px;
-  width: 400px;
-}
-
-.box {
-  border: 1px solid green;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  float: left;
-}
-*/
 li {
   border: 1px solid black;
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 98px;
+  height: 98px;
   float: left;
-  overflow: hidden;   
-  background-image: url("/Users/Mac/generalAssembly/Development/wdi-project-1/images/escherLizardsAgain.jpg");
-  background-size: 300px
+  overflow: hidden;
 }
 
-li:nth-child(1) {
-
-
+li img {
+  position: relative;
 }
 
-li:nth-child(2) {
-
-
-  
+li:nth-child(1) img{
+  top: 0px;
+  left: 0px;
 }
 
-li:nth-child(3) {
-
-
-
+li:nth-child(2) img {
+  top: 0px;
+  left: -100px;
 }
 
-li:nth-child(4) {
-
-
-
+li:nth-child(3) img{
+  top: 0px;
+  left: -200px;
 }
 
-li:nth-child(5) {
-
-
-
+li:nth-child(4) img{
+  top: -100px;
+  left: 0px;
 }
 
-li:nth-child(6) {
-
-
-
+li:nth-child(5) img{
+  top: -100px;
+  left: -100px;
 }
 
-li:nth-child(7) {
-
-
-
+li:nth-child(6) img{
+  top: -100px;
+  left: -200px;
 }
 
-li:nth-child(8) {
+li:nth-child(7) img{
+  top: -200px;
+  left: 0px;
+}
 
-
-
+li:nth-child(8) img{
+  top: -200px;
+  left: -100px;
 }
 
 #x {
-  color: yellow;
-  background-image: none;
+  background: red;
 
 }
 

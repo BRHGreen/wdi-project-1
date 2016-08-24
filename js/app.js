@@ -2,15 +2,16 @@ $(start)
 var start           = [0,1,2,3,4,5,6,7,"x"];
 var shuffled;
 var width           = 3;
-
-
-
-
 function start () {
   createTiles(start);
 
   $("span").on("click", shuffle);
   $("ul").on("click", "li", move); 
+  $(".popup").on("click", function() {
+    $(this).toggleClass("showPopup")
+    console.log(this)
+  })
+
 }
 
 function createTiles (array) {
@@ -20,7 +21,6 @@ function createTiles (array) {
     $("<li id='id"+value+"'><img src='./images/oReallyMeme.jpg'></li>").appendTo($ul);
   });
 }
-
 
 function shuffle() {
   var randomTileIndex, lastTile, numberOfTiles; 
@@ -112,17 +112,6 @@ function move() {
   newSquare          = shuffled[newIndex];
   shuffled[newIndex] = currentSquare;
   shuffled[index]    = newSquare;
-
-  $(shuffled).each(winning)
-  function winning (index, value) {
-      console.log(shuffled)
-      console.log(start)
-
-    if (shuffled === start) {
-      alert("good job")
-    }
-  }
-
 }
 
 

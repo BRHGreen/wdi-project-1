@@ -1,3 +1,8 @@
+# WDI-Project-1
+This is the first project for WDI London
+![alt text](https://cloud.githubusercontent.com/assets/18631052/19969401/53f71f40-a1d0-11e6-93f9-d24f370a9c6c.png "Salvy McMeme Face, after board has been shuffled")
+
+
 # Introduction
 **Salvy McMeme Face** is a one player game based on a **The 15 Puzzle** (also known as The Gem Puzzle or Boss Puzzle) a game originally created in 19th century by **Noyes Palmer Chapman**. This was built as my **first project** on the *Web Development Immersive* course at **General Assembly** using **JavaScript**. A hosted version of **Salvy McMeme Face** can be found here *******url*******
 
@@ -14,7 +19,7 @@ The aim of the game is to **rearrange the tiles to create the completed picture.
 3. Built the game using *object orientated programming* if possible.
 
 # How it was built
-**Salvy McMeme Face** was built with **HTML/CSS** and **Javascript**, it also utilised the following 
+**Salvy McMeme Face** was built with **HTML/CSS** and **Javascript**, it also utilised the following
 - https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
 - https://fonts.google.com/
 
@@ -22,10 +27,3 @@ The aim of the game is to **rearrange the tiles to create the completed picture.
 - [**Main image**][www.funnyjunk.com]
 - [**Background images**][http://trash-russia.com/]
 - **GA Instructors**: Alex and Rane.
-
-
-
-
-
-
-  

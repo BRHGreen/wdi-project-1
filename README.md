@@ -1,19 +1,12 @@
-# wdi-project-1
-This is the first project for WDI London
-![alt text](http://i653.photobucket.com/albums/uu259/sheree1967/sheree1967037/blipperstartscreen_zpsezwval6q.png "Blipper Starting Screen")
-
-![alt text](http://i653.photobucket.com/albums/uu259/sheree1967/sheree1967038/blippergamescreen_zpsb9ylmiad.png "Blipper Level 1 ")
-
-
 # Introduction
-**Blipper** is a one player game *inspired* by the mobile game **Hitman Go** by Square Enix. It was built as my **first project** on the *Web Development Immersive* course at **General Assembly** using **JavaScript**. A hosted version of **Blipper** can be found [**here**](http://blippergame.herokuapp.com/).
+**Salvy McMeme Face** is a one player game based on a **The 15 Puzzle** (also known as The Gem Puzzle or Boss Puzzle) a game originally created in 19th century by **Noyes Palmer Chapman**. This was built as my **first project** on the *Web Development Immersive* course at **General Assembly** using **JavaScript**. A hosted version of **Salvy McMeme Face** can be found here *******url*******
 
 # How to play
-You play as Blip Man, a simple *dark blue circle* character who is distinguishable from the rest of the board. Your goal is to use the **up**, **down**, **left** and **right** arrow keys to **navigate him to his target**, the red circle *without being detected* by the enemy arrows.
+Upon loading the site the player will be presented with a completed picture. When the player is ready to start they must click on the button below the picture labeled **"Shufflez"**. Once this is clicked the picture will be divided up into eight equally sized square tiles and one blank space which will be displayed in a three by three grid format.
 
-Arrows have **predictable behaviour** and can only move one of two ways, meaning that you need to study their *turn patterns* and learn from your mistakes in order to learn *the best route* and win the level. 
 
-Players may also restart to try and beat the level in the lowest amount of moves possible for an extra challenge. There are currently **5** levels in total.
+The aim of the game is to **rearrange the tiles to create the completed picture.** This is achieved by **clicking on the tile which you want to move.** Picture tiles can **only be moved into a blank space.** can **only move one space at a time** can **be moved either left, right, up or down**.
+
 
 # Requirements
 1. Create a game utilising our 2 weeks of knowledge on HTML, CSS and JavaScript.
@@ -21,12 +14,18 @@ Players may also restart to try and beat the level in the lowest amount of moves
 3. Built the game using *object orientated programming* if possible.
 
 # How it was built
-Blipper was built with **HTML/CSS** and **Javascript**, it also utilised the following librairies:
-- [**jQuery**](https://jquery.com/download/)
-- [**Animate.css**](https://daneden.github.io/animate.css/)
+**Salvy McMeme Face** was built with **HTML/CSS** and **Javascript**, it also utilised the following 
+- https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
+- https://fonts.google.com/
 
 # Credits
-- [**Hitman Go**](https://play.google.com/store/apps/details?id=com.squareenixmontreal.hitmango&hl=en)
-- [**Sounds**](http://www.freesfx.co.uk/)
-- **GA Instructors & TA's**: Alex, Caroline & Ollie.
+- [**Main image**][www.funnyjunk.com]
+- [**Background images**][http://trash-russia.com/]
+- **GA Instructors**: Alex and Rane.
 
+
+
+
+
+
+  

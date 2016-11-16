@@ -21,10 +21,10 @@ The aim of the game is to **rearrange the tiles to create the completed picture.
 ### How it was built
 **Salvy McMeme Face** was built with **HTML/CSS** and **Javascript**, it also utilised the following:
 
-- [jQuery library] (https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js)
+- [jQuery library] (https://developers.google.com/speed/libraries/)
 - [Fonts] (https://fonts.google.com/)
 
 ### Credits
-- The main image was found [**here**] (www.funnyjunk.com)
+- The main image was found [**here**] (http://www.funnyjunk.com/)
 - The background image was found [**here**] (http://trash-russia.com/)
 - GA instructors Alex Chin and Rane Gowan

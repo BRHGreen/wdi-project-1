@@ -132,12 +132,12 @@ p {
 .showPopup {
   height: 300px;
   width: 200px;
-  border: 1px solid black; 
+  border: 1px solid black;
   margin-top: -365px;
 }
 
 #rules {
-  float: right; 
+  float: right;
   margin-right: 40px;
 }
 
@@ -145,4 +145,10 @@ p {
   float: left;
   margin-left: 40px
   background-image: url('images/oReallyMeme.jpg')
+}
+
+.foot {
+  height: 200px;
+  width: 100%;
+  background: rgba(26, 0, 0, 1);
 }

@@ -118,7 +118,7 @@ p {
 }
 
 #bottom {
-  height: 40%;
+  height: 30%;
   margin-top: 0px;
   text-align: center;
   /*background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(26, 0, 0,1));*/
@@ -150,7 +150,16 @@ p {
 }
 
 .foot {
-  max-height: 40%;
+  max-height: 30%;
   width: 100%;
   background: rgba(26, 0, 0, 1);
+}
+
+@media screen and (min-height: 600px) {
+  #bottom {
+    height: 80%;
+    width: 100%;
+    /*background: red;*/
+    /*background: rgba(26, 0, 0, 1);*/
+  }
 }

@@ -118,9 +118,8 @@ p {
 }
 
 .text {
-  clear: both;
   margin 0 auto;
-  color: red;
+
 }
 
 #bottom {
@@ -128,26 +127,7 @@ p {
   margin-top: -170px;
   text-align: center;
   background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(26, 0, 0,1));
-  /*background: rgba(26, 0, 0,1);*/
 }
-/*.popup {
-  height: 150px;
-  width: 200px;
-  margin-top: -130px;
-  color: green;
-}
-
-.showPopup {
-  height: 300px;
-  width: 200px;
-  border: 1px solid black;
-  margin-top: -365px;
-}
-
-#rules {
-  float: right;
-  margin-right: 40px;
-}*/
 
 #op {
   float: left;
@@ -160,10 +140,3 @@ p {
   width: 100%;
   background: rgba(26, 0, 0, 1);
 }
-
-@media screen and (min-height: 600px) {
-  #bottom {
-    height: 80%;
-    width: 100%;
-  }
-}*/
